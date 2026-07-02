@@ -42,9 +42,6 @@ app.include_router(router_category)
 app.include_router(router_transaction)
 app.include_router(router_reports)
 
-@app.options("/{path:path}")
-async def handle_options(path: str):
-    return {"status": "ok"}
 
 @app.get("/")
 def root():
