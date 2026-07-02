@@ -31,6 +31,7 @@ class TransactionUpdate(TrasactionBase):
 class TransactionResponse(BaseModel):
     id: int
     title: str
+    description: Optional[str] = None
     type: str
 
     model_config = ConfigDict(from_attributes=True)

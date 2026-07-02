@@ -176,7 +176,7 @@ async function createTransactionAPI(data) {
     transaction_date: data.transaction_date || new Date().toISOString(),
   };
 
-  const response = await apiRequest('/transactions', {
+  const response = await apiRequest('/transactions/', {
     method: 'POST',
     body: JSON.stringify(payload),
   });
@@ -384,7 +384,7 @@ function openTransactionInfo(id, event) {
   document.getElementById('transactionDetail').innerHTML = `
     <div class="transaction-detail-row">
       <span class="detail-label">Descricao</span>
-      <span class="detail-value">${tx.title}</span>
+      <span class="detail-value">${tx.description}</span>
     </div>
     <div class="transaction-detail-row">
       <span class="detail-label">Categoria</span>

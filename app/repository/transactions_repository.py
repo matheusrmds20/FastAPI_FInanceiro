@@ -38,6 +38,7 @@ class TransactionRepository:
         transaction = TransactionsDB(
         title = data.title,
         value = data.value,
+        description = getattr(data, "description", None),
         type = data.type,
         user_id = user_id,
         category_id = data.category_id

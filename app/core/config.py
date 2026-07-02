@@ -10,6 +10,6 @@ class Settings(BaseSettings):
 
     model_config=SettingsConfigDict(env_file=".env")
 
-    DATABASE_URL: str = "postgresql+psycopg2://postgres:postgres@localhost:5432/financeiro"
+    DATABASE_URL: str = "postgresql://postgres.lwupfanslrqaxwsvxonm:25304318Ma.@aws-1-sa-east-1.pooler.supabase.com:6543/postgres"
 
 settings = Settings()

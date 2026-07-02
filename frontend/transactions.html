@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Transacoes - Gestao Financeira</title>
+  <title>Transacoes</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/transactions.css">
 </head>
@@ -23,12 +23,12 @@
       <svg class="header-icon" viewBox="0 0 24 24" fill="currentColor">
         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9H13V7.5h-2V11H8.5v2h2.5v3.5h2V13h2.5v-2z"/>
       </svg>
-      <h1>Transactions</h1>
+      <h1>Transacões</h1>
       <button class="btn-action btn-create" onclick="criarTransacao()">
           <svg viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
           </svg>
-          <span>Nova transacao</span>
+          <span>Nova transacão</span>
       </button>
       <button class="btn-action btn-create-cat" onclick="criarCategoria()">
           <svg viewBox="0 0 24 24" fill="currentColor">
@@ -244,7 +244,7 @@
     <div class="modal-overlay" onclick="closeTransactionActions()"></div>
     <div class="modal-content modal-actions">
       <div class="modal-header">
-        <h2>Acoes da Transacao</h2>
+        <h2>Acoes da transacão</h2>
         <button class="modal-close" onclick="closeTransactionActions()">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -283,7 +283,7 @@
             </svg>
           </div>
           <div>
-            <p class="cat-modal-title" id="txFormTitle">Nova Transacao</p>
+            <p class="cat-modal-title" id="txFormTitle">Nova Transacão</p>
             <p class="cat-modal-sub" id="txFormSub">Preencha os dados abaixo</p>
           </div>
         </div>
@@ -308,7 +308,7 @@
           <input type="number" id="txFormAmount" placeholder="0,00" step="0.01" min="0" />
         </div>
         <div class="field">
-          <label>Data da Transacao</label>
+          <label>Data da Transacão</label>
           <input type="date" id="txFormDate" />
         </div>
         <div class="field">

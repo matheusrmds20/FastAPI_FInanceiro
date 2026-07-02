@@ -12,6 +12,7 @@ class CategoryRepository:
         category = CategoryDB(
             name=data.name,
             type=data.type,
+            description=getattr(data, "description", None),
             user_id=user_id
         )
 
