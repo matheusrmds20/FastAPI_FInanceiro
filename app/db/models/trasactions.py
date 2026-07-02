@@ -20,6 +20,7 @@ class TransactionsDB(Base):
     type = Column(Enum(TransactionType, name="transaction_type"), nullable=False)
     user_id = Column(Integer, ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
     category_id = Column(Integer,ForeignKey("category.id"), nullable=False)
+    description = Column(String, nullable=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     transaction_date = Column(DateTime, nullable=False, default=func.now())
 

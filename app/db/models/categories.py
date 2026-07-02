@@ -20,3 +20,4 @@ class CategoryDB(Base):
     is_activated = Column(Boolean, default=True)
     type = Column(Enum(CategoryType, name="category_type"), nullable=False)
     user_id = Column(Integer, ForeignKey("users.id"))
+    description = Column(String, nullable=True)
