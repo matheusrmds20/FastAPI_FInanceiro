@@ -47,8 +47,13 @@ app.include_router(router_reports)
 
 
 @app.get("/")
+def root():
+    return {"status": "ok"}
+
+
+@app.get("/health")
 def root(db: Session = Depends(get_db)):
-    db.execute(text("SELECT 1"))
+    db.execute(text("SELECT 1")).scalar()
     return {"status": "ok"}
 
 @app.exception_handler(ValueError)
