@@ -1,12 +1,15 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Depends
 from fastapi.responses import JSONResponse
-from app.db.session import Base, engine
+from app.db.session import Base, engine, get_db
 from app.modules.user.routes import router_user
 from app.modules.categories.routes import router_category
 from app.modules.transactions.routes import router_transaction
 from app.modules.reports.routes import router_reports
 from app.core.exceptions.base import ItemNaoEncontrado
 from fastapi.middleware.cors import CORSMiddleware
+from sqlalchemy import text
+from sqlalchemy.orm import Session
+
 
 
 Base.metadata.create_all(bind=engine)
@@ -44,8 +47,9 @@ app.include_router(router_reports)
 
 
 @app.get("/")
-def root():
-    return {"status":"ok"}
+def root(db: Session = Depends(get_db)):
+    db.execute(text("SELECT 1"))
+    return {"status": "ok"}
 
 @app.exception_handler(ValueError)
 def badrequest(request: Request, exc: ValueError):
